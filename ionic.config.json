@@ -1,0 +1,7 @@
+{
+  "name": "PLUS_SIZE_FAHION",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
