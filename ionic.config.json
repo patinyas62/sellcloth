@@ -1,7 +1,8 @@
 {
   "name": "PLUS_SIZE_FAHION",
   "integrations": {
-    "capacitor": {}
+    "capacitor": {},
+    "cordova": {}
   },
   "type": "angular"
 }

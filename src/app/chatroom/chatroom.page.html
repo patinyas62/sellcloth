@@ -1,0 +1,50 @@
+<ion-header [translucent]="true">
+  <ion-toolbar style="padding-top: 3%;background-image: url('../assets/bg.jpg');">
+    <ion-buttons slot="start">
+      <ion-back-button (click)="back()" defaultHref="/" text="" ></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{this.ruser}}</ion-title>
+  </ion-toolbar>
+  
+</ion-header>
+
+<ion-content >
+  <div style="width:max;background-color: #EE5154;height: 3px;" >
+  </div>
+  <div *ngIf="spin" style="padding-top: 50%;" align="center">
+    <ion-spinner name="lines" ></ion-spinner>
+  </div>
+  <ion-col *ngFor="let mes of messages" >
+
+      <ion-row  *ngIf="mes.user1 == ruser" style="width: 70%;background-color: transparent;">
+        <img src="{{this.picr}}" width="40px" height="30px" style="border-radius: 100px;background: transparent;" />
+        <div  class="other" align="center">
+          <p style="margin-top: 10px;">{{mes.message}}</p>
+        </div>
+      </ion-row>
+
+
+    <ion-row *ngIf="mes.user1 == muser" style="width: max;justify-content:flex-end;">
+        <div  class="my" align="center">
+          <p style="margin-top: 10px;">{{mes.message}}</p>
+        </div>
+        <img src="{{this.picm}}" width="40px" height="30px" style="border-radius: 100px;background: transparent;" />
+    </ion-row>
+
+  </ion-col>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar color="light" >
+    <ion-row align-items-center >
+      <ion-col size="9" >
+        <ion-textarea auto-grow class="message-input" row="1" [(ngModel)]="message" ></ion-textarea>
+      </ion-col>
+      <ion-col size="3" >
+        <ion-button expand="block" fill="clear" color="primary" [disabled]="message === ''" class="message" (click)="sendmessage()">
+          <ion-icon name="send-outline"></ion-icon>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

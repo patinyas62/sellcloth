@@ -1,0 +1,30 @@
+.logi {
+    --background: blue;
+    --border-radius: 100px;
+    width: 90px;
+    height: 90px;
+}
+// style="background: orange;border-radius: 100px;width: 90px;height: 90px;color: white;"
+
+.roww {
+    background-color: #EFFAFE;
+    height: 30px;
+    margin-top: 10%;
+    width: 80%;
+    border-radius: 10px;
+}
+
+.rerow {
+    background-color: #EFFAFE;
+    height: 30px;
+    margin-top: 2%;
+    width: 80%;
+    border-radius: 10px;
+}
+
+#uploadBtn {
+    position: absolute;
+    left: 37%;
+    top: 19%;
+    opacity: 0;
+  }

@@ -1,0 +1,31 @@
+<ion-header [translucent]="true">
+  <ion-toolbar style="padding-top: 3%;background-image: url('../assets/bg.jpg');">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/" text="" ></ion-back-button>
+    </ion-buttons>
+    <ion-searchbar style="width: 90%;" mode="ios" (search)="get()" #searchh></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <!-- <div style="padding-top: 5%;">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="/" text="" ></ion-back-button>
+      </ion-buttons>
+      <ion-searchbar style="width: 90%;" mode="ios" (search)="get()"></ion-searchbar>
+    </ion-toolbar>
+  </div> -->
+  <div style="width:max;background-color: #EE5154;height: 3px;" ></div>
+    <ion-row >
+        <ion-card style="width: 40%;height: 30%;" *ngFor="let f of items" (click)="getbasket(f)" >
+          <ion-img src="{{f.pic}}"></ion-img>
+          <ion-card-content>
+            <h2 align="center"><b>{{f.name}}</b></h2>
+            <p align="left" style="font-size: 20px;color: orange;">฿ {{f.price}}</p>
+            <p>shop: {{f.nameshop}}</p>
+            <p>detail: {{f.detail}}</p>
+          </ion-card-content>
+        </ion-card>
+    </ion-row>
+</ion-content>

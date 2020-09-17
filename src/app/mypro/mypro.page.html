@@ -1,0 +1,59 @@
+<ion-header [translucent]="true">
+  <ion-toolbar style="padding-top: 3%;background-image: url('../assets/bg.jpg');">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/" text="" ></ion-back-button>
+    </ion-buttons>
+    <ion-title>ร้านของฉัน</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div style="width:max;background-color: #EE5154;height: 3px;" >
+  </div>
+  <div style="height: 20%;">
+    <ion-row>
+      <img src={{pic}} width="70px" height="70px" style="border-radius: 100%;margin-top: 30px;margin-left: 40px;" />
+      <p style="margin-top: 60px;margin-left: 50px;">{{name}}</p>
+    </ion-row>
+  </div>
+  <div style="width:max;background-color: #FFF2F3;height: 10px;" >
+  </div>
+  <div >
+    <ion-row>
+      <ion-img src="../assets/shophome.png" style="width: 40px;padding-top: 0%;margin-left: 5%;" ></ion-img>
+      <p style="margin-left: 20px;margin-top: 5%;">การขายของฉัน</p>
+    </ion-row>
+    <div style="width:max;background-color: #FFF2F3;height: 10px;" >
+    </div>
+  </div>
+  <div style="height: 20%;">
+    <ion-row style="justify-content: space-around;margin-top: 7%;">
+      <ion-img (click)="send()" src="../assets/truck.png" style="width: 40px;padding-top: 5%;" ></ion-img>
+      <ion-img (click)="cancel()" src="../assets/text-cancel.png" style="width: 40px;padding-top: 5%;" ></ion-img>
+      <ion-img src="../assets/wallet.png" style="width: 40px;padding-top: 5%;" ></ion-img>
+    </ion-row>
+    <ion-row style="justify-content: space-around;font-size: 12px;">
+      <p>สิ่งที่ต้องส่ง</p>
+      <p>ยกเลิกแล้ว</p>
+      <p>การคืนเงิน</p>
+    </ion-row>
+  </div>
+  <div>
+    <div style="width:max;background-color: #FFF2F3;height: 10px;" >
+    </div>
+    <ion-row>
+      <ion-img src="../assets/payment.png" style="width: 40px;padding-top: 0%;margin-left: 5%;" ></ion-img>
+      <p style="margin-left: 20px;margin-top: 5%;">การขายของฉัน</p>
+    </ion-row>
+    <div style="width:max;background-color: #FFF2F3;height: 10px;" >
+    </div>
+  </div>
+  <div>
+    <ion-row (click)="allpro()">
+      <ion-img src="../assets/all.png" style="width: 40px;padding-top: 0%;margin-left: 5%;" ></ion-img>
+      <p style="margin-left: 20px;margin-top: 5%;">สินค้าทั้งหมดของฉัน</p>
+    </ion-row>
+    <div style="width:max;background-color: #FFF2F3;height: 10px;" >
+    </div>
+  </div>
+</ion-content>

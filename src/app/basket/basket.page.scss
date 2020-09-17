@@ -1,0 +1,18 @@
+ion-content {
+    --background: #FFF2F3;
+}
+.check {
+    --background: white;
+    --background-checked: green;
+}
+
+.xshot {
+    --background: white;
+    --background-activated: red;
+    --border-color: red;
+}
+
+.tabs-btm {
+    position: fixed;
+    bottom: 0;
+  }

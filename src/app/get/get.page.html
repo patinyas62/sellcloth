@@ -1,0 +1,22 @@
+<ion-header [translucent]="true">
+  <ion-toolbar style="padding-top: 3%;background-image: url('../assets/bg.jpg');">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/" text="" ></ion-back-button>
+    </ion-buttons>
+    <ion-title>ที่ต้องได้รับ</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <div style="width:max;background-color: hsl(359, 82%, 63%);height: 3px;" ></div>
+    <ion-row >
+        <ion-card style="width: 40%;height: 30%;" *ngFor="let i of items" >
+          <ion-img src="{{i.pic}}"></ion-img>
+          <ion-card-content>
+            <h2 align="center"><b>{{i.name}}</b></h2>
+            <p>{{i.pice}} &nbsp; ชิ้น</p>
+            <p>shop: {{i.shop}}</p>
+          </ion-card-content>
+        </ion-card>
+    </ion-row>
+</ion-content>

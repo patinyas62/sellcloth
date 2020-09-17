@@ -1,0 +1,27 @@
+<ion-header [translucent]="true">
+  <ion-toolbar style="padding-top: 3%;background-image: url('../assets/bg.jpg');">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/" text="" ></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{this.datase}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+
+  <div style="width:max;background-color: #EE5154;height: 3px;" ></div>
+  <div *ngIf="check" style="margin-top: 40%;" align="center">
+    <p>ไม่มีในคลัง</p>
+  </div>
+    <ion-row >
+        <ion-card style="width: 40%;height: 30%;" *ngFor="let f of item" (click)="getbasket(f)" >
+          <ion-img src="{{f.pic}}"></ion-img>
+          <ion-card-content>
+            <h2 align="center"><b>{{f.name}}</b></h2>
+            <p align="left" style="font-size: 20px;color: orange;">฿ {{f.price}}</p>
+            <p>shop: {{f.nameshop}}</p>
+            <p>detail: {{f.detail}}</p>
+          </ion-card-content>
+        </ion-card>
+    </ion-row>
+</ion-content>

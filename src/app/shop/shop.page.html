@@ -1,0 +1,23 @@
+<ion-header [translucent]="true">
+  <ion-toolbar style="padding-top: 3%;background-image: url('../assets/bg.jpg');">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/" text="" ></ion-back-button>
+    </ion-buttons>
+    <ion-title>ร้านค้าทั้งหมด</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div style="width:max;background-color: #EE5154;height: 3px;" >
+
+  </div>
+  <div *ngIf="spin" style="padding-top: 50%;" align="center">
+    <ion-spinner name="lines" ></ion-spinner>
+  </div>
+  <ion-item *ngFor="let f of item" style="padding-top: 5%;" (click)="product(f)">
+    <ion-row style="margin-bottom: 5px;" >
+      <img src="{{f.pic}}" style="width: 70px;border-radius: 200px;height: 70px;" />
+      <p style="margin-left: 120%;margin-top: -60px;">{{f.name}}</p>
+    </ion-row>
+  </ion-item>
+</ion-content>

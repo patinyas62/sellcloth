@@ -1,20 +1,49 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Blank
+    <ion-title align="center" >
+        เข้าสู่ระบบ
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
+  <!-- <ion-header >
     <ion-toolbar>
       <ion-title size="large">Blank</ion-title>
     </ion-toolbar>
-  </ion-header>
+  </ion-header> -->
+  <div style="width:max;background-color: #EE5154;height: 3px;" >
 
+  </div>
   <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <div align="center" >
+      <ion-img src="../assets/logo1.png" style="width: 65px;"></ion-img>
+      <p></p>
+    </div>
+    <div align="center" style="padding-top: 10%;">
+      <ion-item style="width: 80%;" >
+        <ion-label><ion-icon name="person-outline"></ion-icon></ion-label>
+        <ion-input placeholder="ชื่อผู้ใช้" [(ngModel)]="id.username" ></ion-input>
+      </ion-item>
+      <ion-item style="width: 80%;" >
+        <ion-label><ion-icon name="lock-closed-outline"></ion-icon></ion-label>
+        <ion-input placeholder="รหัสผ่าน" type="password" [(ngModel)]="id.password" ></ion-input>
+        <p style="font-size: 12px;padding-top: 5%;color: #77C7F9;" (click)="labelClick2($event)" >ลืมรหัสผ่าน?</p>
+      </ion-item>
+      <div style="padding-top: 10%;" >
+        <ion-spinner name="lines" *ngIf="spin" ></ion-spinner>
+        <ion-button expand="block" (click)="login()" style="background: linear-gradient(197deg, #C78E84,#E45A5B ); border-radius: 10px;color: black;height: 30px; width: 80%;" fill="clear" mode="md" >เข้าสู่ระบบ</ion-button>
+      </div>
+    </div>
+    <div align="left" style="padding-top: 5%;" >
+      <p style="padding-left: 10%;font-size: 13px;color: #77C7F9;" (click)="labelClick($event)">สมัครสมาชิกใหม่</p>
+    </div>
+    <div align="center">
+      <span class="divider line one-line" style="width: 50%;" >หรือ</span>
+    </div>
+    <div align="center" style="padding-top: 10%;" >
+      <ion-button expand="block" style="height: 30px; width: 80%;"  ><ion-icon name="logo-facebook"></ion-icon>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; เข้าสู่ระบบด้วย Facebook &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</ion-button>
+      <ion-button expand="block" style="height: 30px; width: 80%;"  ><ion-icon name="logo-google"></ion-icon>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; เข้าสู่ระบบด้วย Google &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</ion-button>
+    </div>
   </div>
 </ion-content>

@@ -1,0 +1,65 @@
+<ion-header [translucent]="true">
+  <ion-toolbar style="padding-top: 3%;background-image: url('../assets/bg.jpg');">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home" text="" ></ion-back-button>
+    </ion-buttons>
+      <ion-label style="margin-top: 6px;font-size: 20px;margin-left: 20px;">คำสั่งซื้อ</ion-label>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div style="width:max;background-color: #EE5154;height: 2px;" >
+  </div>
+
+  <div *ngIf="loading == true" style="justify-content: center;margin-left: 50%;">
+    <ion-spinner></ion-spinner>
+  </div>
+
+  <div style="height: 10%;width: max;background-color: white;" *ngIf="loading == false">
+    <p style="padding-top: 2%;margin-left: 10%;">คำสั่งซื้อของคุณเสร็จสมบูรณ์</p>
+  </div>
+
+  <div *ngIf="item != []">
+    <div style="width: max;background-color: white;margin-top: 20px;" *ngFor="let i of item">
+      <ion-item style="color: black;">
+        <img src="../../assets/market.png" width="30px" />
+        <p style="margin-left: 30px;">{{i[0]["shop"]}}</p>
+      </ion-item>
+      <ion-row  *ngFor="let j of i" style="margin-top: 20px;background-color: #FFF2F3;justify-content:space-between;">
+        <img width="20%" height="120px" src="{{j['pic']}}" style="margin-left: 20px;" />
+        <div style="margin-right: 30px;">
+          <ion-col>
+            <p>{{j["name"]}}</p>
+            <p style="color: red;margin-left: 40px;">฿ {{j["price"]}}</p>
+            <ion-row>
+              <p>รวม </p>
+              <p style="color: red;margin-left: 20px;">฿ {{j["price"]*j['pice']}}</p>
+            </ion-row>
+            
+          </ion-col>
+        </div>
+        <!-- <ion-button (click)="delete(j['name'])" class="xshot" style="color: red;width: 20px;height: 20px;border-radius: 100px;margin-right: 10px;" fill="outline">X</ion-button> -->
+      </ion-row>
+      <div style="background-color: white;height: 30px;"></div>
+    </div>
+  </div>
+
+</ion-content>
+
+<ion-footer style="height: 30%;background-color: white;">
+  <div style="background-color: #FFF2F3;height: 10px;"></div>
+  <div>
+    <p style="color: black;margin-left: 20px;">ให้คะแนน</p>
+    <div style="margin-left: 25%;">
+      <ion-rating
+          rate= "{{rate}}"
+          readonly="false" 
+          size="default" 
+          (hover)="onRateChange($event)"
+          class="star">
+      </ion-rating>
+    </div>
+  </div>
+  <ion-button (click)="emit()" expand="block" style="margin-left: 5%;margin-top: 5%;background: linear-gradient(197deg, #C78E84,#E45A5B ); border-radius: 4px;color: white;height: 30px; width: 90%;" fill="clear" mode="md">ให้คะแนน</ion-button>
+
+</ion-footer>

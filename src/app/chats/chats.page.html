@@ -1,0 +1,26 @@
+<ion-header [translucent]="true">
+  <ion-toolbar style="padding-top: 3%;background-image: url('../assets/bg.jpg');">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/" text="" ></ion-back-button>
+    </ion-buttons>
+    <ion-title>ข้อความ</ion-title>
+  </ion-toolbar>
+  
+</ion-header>
+<div style="width:max;background-color: #EE5154;height: 3px;" >
+</div>
+<ion-content>
+  <div *ngIf="spin" style="padding-top: 50%;" align="center">
+    <ion-spinner name="lines" ></ion-spinner>
+  </div>
+  <ion-item *ngFor="let f of item" style="padding-top: 5%;" (click)="chat(f)">
+    <ion-row style="margin-bottom: 5px;" >
+      <img src="{{f.pic}}" style="width: 70px;border-radius: 200px;height: 70px;" />
+      <ion-col style="width: max;margin-left: 20px;">
+        <Text style="margin-top: -60px;">{{f.username}}</Text>
+        <p *ngIf="f.chat[this.userm]['lastuser'] == f.username" style="font-size: 10px;color: grey;">คุณได้รับข้อความใหม่</p>
+        <p *ngIf="f.chat[this.userm]['lastuser'] == userm" style="font-size: 10px;color: grey;">คุณได้ส่งข้อความแล้ว</p>
+      </ion-col>
+    </ion-row>
+  </ion-item>
+</ion-content>

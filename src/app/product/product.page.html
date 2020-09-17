@@ -1,0 +1,36 @@
+<ion-header [translucent]="true">
+  <ion-toolbar style="padding-top: 3%;background-image: url('../assets/bg.jpg');">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/" text="" ></ion-back-button>
+    </ion-buttons>
+    <ion-title>สินค้าทั้งหมด</ion-title>
+  </ion-toolbar>
+  
+</ion-header>
+
+<ion-content [scrollEvents]="true">
+  <div style="width:max;background-color: #EE5154;height: 3px;" >
+  </div>
+    <div *ngIf="item">
+        <div style="width: max;background-color: white;height: 150px;margin-top: 20px;" *ngFor="let i of item">
+          <ion-row >
+            <img src="{{i.pic}}" width="130px" height="130px" style="margin-top: 10px;"/>
+            <ion-col style="margin-left: 10%;">
+              <p >{{i.name}}</p>
+              <p>ราคา &nbsp;&nbsp;&nbsp; ฿{{i.price}}</p>
+              <ion-button (click)="getbas(i)" style="font-size: 14px;background: linear-gradient(197deg, #C78E84,#E45A5B );color: white;border-radius: 10px;" fill="clear">เพิ่มสินค้า</ion-button>
+            </ion-col>
+          </ion-row>
+        </div>
+    </div>
+</ion-content>
+
+<ion-footer style="height: 10%;background-color: white;" >
+  <div style="width:max;background-color: #EE5154;height: 3px;" >
+  </div>
+  <div align="center">
+    <ion-button class="koko" (click)="chat()">
+      สนทนากับร้านนี้
+    </ion-button>
+  </div>
+</ion-footer>

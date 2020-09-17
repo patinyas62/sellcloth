@@ -1,0 +1,57 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/" text="" ></ion-back-button>
+    </ion-buttons>
+    <ion-title align="center" >
+        สมัครสมาชิก
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <!-- <ion-header >
+    <ion-toolbar>
+      <ion-title size="large">Blank</ion-title>
+    </ion-toolbar>
+  </ion-header> -->
+  <div style="width:max;background-color: #EE5154;height: 3px;" >
+
+  </div>
+  <div id="container">
+    <ion-spinner name="lines" *ngIf="spin" ></ion-spinner>
+    <div align="center">
+      <ion-item style="width: 80%;" >
+        <ion-label><ion-icon name="person-outline"></ion-icon></ion-label>
+        <ion-input placeholder="ชื่อผู้ใช้" [(ngModel)]="user.username"></ion-input>
+        <p style="color: red;" *ngIf="checkuser" >*ไม่ได้กรอก</p>
+        <p style="color: red;" *ngIf="checksameuser" >*มีคนใช้แล้ว</p>
+      </ion-item>
+      <ion-item style="width: 80%;" >
+        <ion-label><ion-icon name="lock-closed-outline"></ion-icon></ion-label>
+        <ion-input placeholder="รหัสผ่าน" type="password" [(ngModel)]="user.password" ></ion-input>
+        <p style="color: red;" *ngIf="checkpass" >*ไม่ได้กรอก</p>
+      </ion-item>
+      <ion-item style="width: 80%;" >
+        <ion-input placeholder="โปรดใส่รหัสผ่านอีกครั้ง" type="password" [(ngModel)]="user.repass" ></ion-input>
+        <p style="color: red;" *ngIf="checkrepass" >*ไม่ได้กรอก</p>
+        <p style="color: red;" *ngIf="checksame" >*ไม่ตรงกัน</p>
+      </ion-item>
+      <ion-item style="width: 80%;" >
+        <ion-label><ion-icon name="call-outline"></ion-icon></ion-label>
+        <ion-input placeholder="หมายเลขโทรศัพท์" [(ngModel)]="user.phone" ></ion-input>
+        <p style="color: red;" *ngIf="checkphone" >*ไม่ได้กรอก</p>
+      </ion-item>
+    </div>
+    <div align="center" style="padding-top: 10%;" >
+      <span class="divider line one-line" style="width: 50%;" >หรือ</span>
+    </div>
+    <div align="center" style="padding-top: 10%;" >
+      <ion-button expand="block" style="height: 30px; width: 80%;"  ><ion-icon name="logo-facebook" style="padding-right: 15%;"></ion-icon>เข้าสู่ระบบด้วย Facebook&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</ion-button>
+      <ion-button expand="block" style="height: 30px; width: 80%;"  ><ion-icon name="logo-google" style="padding-right: 15%;"></ion-icon>เข้าสู่ระบบด้วย Google&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</ion-button>
+    </div>
+    <div style="padding-top: 20%;" align="center" >
+      <ion-button (click)="register()" expand="block" style="background: linear-gradient(197deg, #C78E84,#E45A5B ); border-radius: 10px;color: black;height: 30px; width: 80%;" fill="outline" mode="md">สมัครสมาชิก</ion-button>
+    </div>
+  </div>
+</ion-content>

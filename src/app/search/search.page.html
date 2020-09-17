@@ -1,0 +1,44 @@
+<ion-content>
+  <div style="background-image: url('../assets/bg.jpg');height: 45%;" >
+    <div style="padding-top: 3%;">
+        <ion-row>
+          <ion-searchbar style="width: 75%;" mode="ios" (search)="get()" #searchh></ion-searchbar>
+          <ion-img (click)="basket()" src="../assets/bag.png" style="width: 40px;padding-left: 2%;"  ></ion-img>
+          <ion-img (click)="chat()" src="../assets/chat.png" style="width: 40px;padding-left: 2%;"></ion-img>
+        </ion-row>
+    </div>
+    <div style="background: transparent;">
+      <ion-img src="../assets/test.png"></ion-img>
+    </div>
+  </div>
+  <div>
+    <ion-row style="justify-content: space-around;">
+      <ion-img (click)="section('เสื้อเชิ้ต')" src="../assets/s1.png" style="width: 70px;padding-top: 5%;" ></ion-img>
+      <ion-img (click)="section('เสื้อ')" src="../assets/s2.png" style="width: 70px;padding-top: 5%;" ></ion-img>
+      <ion-img (click)="section('เดรส')" src="../assets/s3.png" style="width: 70px;padding-top: 5%;" ></ion-img>
+    </ion-row>
+    <ion-row style="justify-content: space-around;">
+      <p>เสื้อเชิ้ต</p>
+      <p>เสื้อ</p>
+      <p>เดรส</p>
+    </ion-row>
+    <ion-row style="justify-content: space-around;">
+      <ion-img (click)="section('กางเกงขาสั้น')" src="../assets/s4.png" style="width: 70px;padding-top: 5%;" ></ion-img>
+      <ion-img (click)="section('กระโปรง')" src="../assets/s5.png" style="width: 70px;padding-top: 5%;" ></ion-img>
+      <ion-img (click)="section('กางเกงขายาว')" src="../assets/s6.png" style="width: 70px;padding-top: 5%;" ></ion-img>
+    </ion-row>
+    <ion-row style="justify-content: space-around;">
+      <p>กางเกงขาสั้น</p>
+      <p>กระโปรง</p>
+      <p>กางเกงขายาว</p>
+    </ion-row>
+  </div>
+  <div>
+    <p style="color: red;margin-left: 10px;">สินค้าแนะนำ</p>
+    <ion-row>
+      <div *ngFor="let i of item">
+        <img (click)="getbasket(i)" src="{{i.pic}}" width="80px" style="margin-left: 30px;border-radius: 20px;margin-top: 5px;" />
+      </div>
+    </ion-row>
+  </div>
+</ion-content>

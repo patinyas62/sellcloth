@@ -1,0 +1,51 @@
+<ion-header [translucent]="true">
+  <ion-toolbar style="padding-top: 3%;background-image: url('../assets/bg.jpg');">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/" text="" ></ion-back-button>
+    </ion-buttons>
+    <ion-title>เพิ่มสินค้า</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div style="width:max;background-color: #EE5154;height: 3px;" >
+  </div>
+  <div align="center">
+    <div *ngIf="pic" style="background: orange;width: 90px;height: 100px;border-radius: 100px;margin-top: 10%;">
+        <img src="{{pic}}" width="70px" height="65px" style="margin-top: 10px;border-radius: 100px;" />
+        <input id="uploadBtn" type="file" class="upload" (change)="uploadFile($event.target.files)" />
+        <p style="color: white;font-size: 10px;margin-top: 0px;" >แก้ไข</p>
+    </div>
+  </div>
+
+  <div align="center">
+    <ion-row class="roww">
+        <ion-input style="margin-top: 0px;" [(ngModel)]="name">ชื่อสินค้า</ion-input>
+    </ion-row>
+    <ion-row class="rerow">
+      <ion-input style="margin-top: 0px;" [(ngModel)]="sec">ประเภทสินค้า</ion-input>
+    </ion-row>
+    <ion-row class="rerow">
+      <ion-input style="margin-top: 0px;" [(ngModel)]="brand">ยี่ห้อ</ion-input>
+    </ion-row>
+  </div>
+
+  <div align="center">
+    <ion-row class="rerow">
+      <ion-input style="margin-top: 0px;" [(ngModel)]="price">ราคา</ion-input>
+    </ion-row>
+    <ion-row class="rerow">
+      <ion-input style="margin-top: 0px;" [(ngModel)]="picein">สินค้าในคลัง</ion-input>
+    </ion-row>
+    <ion-row class="rerow">
+      <ion-input style="margin-top: 0px;" [(ngModel)]="tran">การส่งสินค้า</ion-input>
+    </ion-row>
+    <ion-row class="rerow">
+      <ion-input style="margin-top: 0px;" [(ngModel)]="detail">ข้อมูลของสินค้า</ion-input>
+    </ion-row>
+  </div>
+
+  <div align = "center">
+    <ion-button (click)="submit()" style="color: white;border-radius: 10px;width: 70%;margin-top: 20%;height: 30px;background: linear-gradient(197deg, #C78E84,#E45A5B );" fill="clear">ตกลง</ion-button>
+  </div>
+</ion-content>

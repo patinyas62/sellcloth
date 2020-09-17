@@ -1,0 +1,39 @@
+<ion-header [translucent]="true">
+  <ion-toolbar style="padding-top: 3%;background-image: url('../assets/bg.jpg');">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/" text="" ></ion-back-button>
+    </ion-buttons>
+    <ion-row style="margin-left: 40px;width: max;justify-content: space-between;">
+      <ion-label style="margin-top: 6px;font-size: 20px;">เพิ่มที่อยู่</ion-label>
+    </ion-row>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div style="margin-top: 40vh;" align="center">
+    <ion-item style="width: 80%;" >
+      <ion-input placeholder="บ้านเลขที่: " [(ngModel)]="user.ad" ></ion-input>
+      <p style="color: red;" *ngIf="checkrepass" >*ไม่ได้กรอก</p>
+    </ion-item>
+    <ion-item style="width: 80%;" >
+      <ion-input placeholder="ตำบล: " [(ngModel)]="user.local" ></ion-input>
+      <p style="color: red;" *ngIf="checkrepass" >*ไม่ได้กรอก</p>
+    </ion-item>
+    <ion-item style="width: 80%;" >
+      <ion-input placeholder="อำเภอ: " [(ngModel)]="user.dis" ></ion-input>
+      <p style="color: red;" *ngIf="checkrepass" >*ไม่ได้กรอก</p>
+    </ion-item>
+    <ion-item style="width: 80%;" >
+      <ion-input placeholder="จังหวัด: " [(ngModel)]="user.provin" ></ion-input>
+      <p style="color: red;" *ngIf="checkrepass" >*ไม่ได้กรอก</p>
+    </ion-item>
+  </div>
+</ion-content>
+
+<ion-footer style="background-color: white;">
+  <div style="width:max;background-color: #EE5154;height: 3px;" >
+  </div>
+  <div align="center">
+    <ion-button expand="block" (click)="addadre()" style="margin-left: 10px;margin-top: 10px;background: linear-gradient(197deg, #C78E84,#E45A5B ); border-radius: 5px;color: white;height: 40px; width: 20%;" fill="clear" mode="md" >เพิ่มที่อยู่</ion-button>
+  </div>
+</ion-footer>

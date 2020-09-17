@@ -1,0 +1,124 @@
+<ion-header [translucent]="true">
+  <ion-toolbar style="padding-top: 3%;background-image: url('../assets/bg.jpg');">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/" text="" ></ion-back-button>
+    </ion-buttons>
+    <ion-title>แก้ไขโปรไฟล์</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div style="width:max;background-color: #EE5154;height: 3px;" >
+  </div>
+  <div align="center">
+    <div style="background: #3998F7;width: 90px;height: 100px;border-radius: 100px;margin-top: 10%;">
+        <img src="{{pic}}" width="70px" height="65px" style="margin-top: 10px;border-radius: 100px;"/>
+        <input id="uploadBtn" type="file" class="upload" (change)="uploadFile($event.target.files)" />
+        <p style="color: white;font-size: 10px;margin-top: 0px;" >แก้ไข</p>
+        
+    </div>
+  </div>
+
+  <div align="center">
+    <ion-row class="roww">
+        <ion-input style="margin-top: 0px;" [(ngModel)]="name">ชื่อ</ion-input>
+    </ion-row>
+    <ion-row class="rerow">
+      <p style="margin-top: 6px;">ชื่อผู้ใช้</p>
+      <p style="margin-left: 30%;margin-top: 6px;">{{username}}</p>
+    </ion-row>
+    <ion-row class="rerow">
+      <ion-input style="margin-top: 0px;" [(ngModel)]="hbd">วันเกิด</ion-input>
+    </ion-row>
+  </div>
+
+  <div align="center">
+    <ion-row class="roww">
+      <ion-input style="margin-top: 0px;" [(ngModel)]="phone">โทรศัพท์</ion-input>
+    </ion-row>
+    <ion-row class="rerow">
+      <ion-input style="margin-top: 0px;" [(ngModel)]="email">E-mail</ion-input>
+    </ion-row>
+  </div>
+
+  <div align = "center">
+    <ion-button (click)="submit()" style="color: white;border-radius: 10px;width: 70%;margin-top: 20%;height: 30px;background: linear-gradient(197deg, #C78E84,#E45A5B );" fill="clear">ตกลง</ion-button>
+  </div>
+</ion-content>
+
+<!-- <ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-title>
+      Firestore Image Upload
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  
+  <ion-card class="ion-text-center" *ngIf="!isUploading && !isUploaded">
+    <ion-card-header>
+      <ion-card-title>Choose Images to Upload</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-button color="success" shape="round" size="large" >
+        <span>Select Image</span>
+        <input id="uploadBtn" type="file" class="upload" (change)="uploadFile($event.target.files)">
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card class="ion-text-center" *ngIf="isUploading && !isUploaded">
+    <ion-card-header>
+      <ion-card-title>Selected File:<b>{{ fileName }}</b></ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <div *ngIf="percentage | async as pct">
+        Progress: {{ pct | number }}%
+        <ion-progress-bar value="{{ pct / 100 }}"></ion-progress-bar>
+      </div>
+      <div *ngIf="snapshot | async as snap">
+        File Size: {{ snap.totalBytes | fileSizePipe }} Transfered:
+        {{ snap.bytesTransferred | fileSizePipe }}
+        <div *ngIf="snapshot && snap.bytesTransferred != snap.totalBytes">
+          <ion-button color="warning" size="small" (click)="task.pause()" class="button is-warning">Pause</ion-button>
+          <ion-button size="small" (click)="task.resume()" class="button is-info">Resume</ion-button>
+          <ion-button color="danger" size="small" (click)="task.cancel()" class="button is-danger">Cancel</ion-button>
+        </div>
+      </div>
+    </ion-card-content>
+  </ion-card>
+  
+  <ion-card class="ion-text-center" *ngIf="!isUploading && isUploaded">
+    <ion-card-header>
+      <ion-card-title>
+        <b>{{ fileName }}</b> Uploaded!
+      </ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <div *ngIf="UploadedFileURL | async as url">
+        <img [src]="url" />
+        <a [href]="url" target="_blank" rel="noopener">Download</a>
+      </div>
+      File Size: {{ fileSize | fileSizePipe }}
+      <ion-button expand="full" color="success" (click)="isUploading = isUploaded = false">Upload More</ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  <h2 class="ion-text-center">Uploaded Freaky Images</h2>
+
+  <ion-card color="light" class="ion-text-center" *ngFor="let item of images | async">
+    <ion-card-header>
+      <ion-card-title>
+        {{ item.name }}
+      </ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <img [src]="item.filepath" />
+      <a [href]="item.filepath" target="_blank" rel="noopener">Download</a>
+    </ion-card-content>
+  </ion-card>
+</ion-content> -->

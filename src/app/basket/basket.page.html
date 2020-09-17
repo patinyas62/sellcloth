@@ -1,0 +1,52 @@
+<ion-header [translucent]="true">
+  <ion-toolbar style="padding-top: 3%;background-image: url('../assets/bg.jpg');">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/" text="" ></ion-back-button>
+    </ion-buttons>
+    <ion-row style="margin-left: 40px;width: max;justify-content: space-between;">
+      <ion-label style="margin-top: 6px;font-size: 20px;">รถเข็น</ion-label>
+      <ion-img (click)="chat()" src="../assets/chat.png" style="width: 40px;margin-right: 10px;"></ion-img>
+    </ion-row>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div style="width:max;background-color: #EE5154;height: 3px;" >
+  </div>
+
+  <div *ngIf="item != []">
+    <div style="width: max;background-color: white;margin-top: 20px;" *ngFor="let i of item">
+      <ion-item style="color: black;">
+        <img src="../../assets/market.png" width="30px" />
+        <p style="margin-left: 30px;">{{i[0]["shop"]}}</p>
+      </ion-item>
+      <ion-row style="margin-left: 20px;margin-top: 20px;" *ngFor="let j of i">
+        <ion-checkbox disabled="false" [(ngModel)]="j['check']" class="check" (ionChange)="changecheck(j['name'],j['check'])"></ion-checkbox>
+        <img width="20%" height="120px" src="{{j['pic']}}" style="margin-left: 20px;" />
+        <ion-col style="margin-left: 30px;">
+          <p>{{j["name"]}}</p>
+          <p style="color: red;">฿ {{j["price"]}}</p>
+          <div>
+            <ion-row style="height: 30px;width: 50%;justify-content: space-between;border-width: 1px;border-style: solid;border-radius: 10px;">
+              <ion-button (click)="negative(j['name'])" style="width: 30px;margin-left: 0px;margin-top: 0px;height: 30px;border-right: rgb(112, 112, 112);border-style:solid;border-top:transparent;border-left: transparent;border-bottom: transparent;" fill="clear"><p style="color:black;font-size: 30px;margin-top: 25px;margin-left: -3px;">-</p></ion-button>
+              <p style="margin-top: 5px;">{{j["pice"]}}</p>
+              <ion-button (click)="possitive(j['name'])" style="width: 30px;margin-right: 0px;margin-top: 0px;height: 30px;border-left: rgb(112, 112, 112);border-style: solid;border-bottom: transparent;border-top: transparent;border-right: transparent;" fill="clear"><p style="color: black;font-size: 30px;margin-top: 25px;margin-right: 3px;">+</p></ion-button>
+            </ion-row>
+          </div>
+        </ion-col>
+        <!-- <ion-button (click)="delete(j['name'])" class="xshot" style="color: red;width: 20px;height: 20px;border-radius: 100px;margin-right: 10px;" fill="outline">X</ion-button> -->
+      </ion-row>
+      <div style="background-color: white;height: 30px;"></div>
+    </div>
+  </div>
+</ion-content>
+
+<ion-footer style="height: 100px;background-color: white;">
+  <div style="width:max;background-color: #EE5154;height: 3px;" >
+  </div>
+  <ion-row style="justify-content: space-between;">
+    <ion-button expand="block" (click)="pay(payall)" style="margin-left: 10px;margin-top: 10px;background: linear-gradient(197deg, #C78E84,#E45A5B ); border-radius: 5px;color: white;height: 40px; width: 20%;" fill="clear" mode="md" >ชำระเงิน</ion-button>
+    <ion-button expand="block" (click)="addre()" style="margin-left: 10px;margin-top: 10px;background: linear-gradient(197deg, #C78E84,#E45A5B ); border-radius: 5px;color: white;height: 40px; width: 20%;" fill="clear" mode="md" >จัดส่งที่</ion-button>
+    <p style="color: red;margin-right: 20px;">รวมทั้งหมด: ฿ {{payall}}</p>
+  </ion-row>
+</ion-footer>

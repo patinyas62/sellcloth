@@ -1,0 +1,48 @@
+<ion-content>
+  <div style="background: #FFF2F3;height: 30%;" >
+    <div style="padding-top: 5%;">
+        <ion-row>
+          <div style="background: white; border-radius: 360px;color: white;height: 40px; width: 200px;">
+            <ion-row>
+              <ion-button (click)="myshop()" style="background: orange;border-radius: 100px;width: 40px;height: 40px;color: white;" fill="clear">S</ion-button>
+              <p style="color: black;padding-left: 20px;font-size: 20px;margin-top: 10px;">ร้านของฉัน</p>
+            </ion-row>
+          </div>
+          <ion-img (click)="basket()" src="../assets/bag.png" style="width: 40px;;margin-left: 15%;"  ></ion-img>
+          <ion-img (click)="chat()" src="../assets/chat.png" style="width: 40px;margin-left: 2%;"></ion-img>
+        </ion-row>
+    </div>
+    <div style="background: white;margin-top: 10%;border-radius: 360px;width: 200px;height: 40px;margin-left: 10%;">
+      <ion-row>
+        <ion-button (click)="edit()" style="background: #788499;border-radius: 100px;width: 40px;height: 40px;color: white;" fill="clear"><ion-col><p style="font-size: 20px;margin-top: 6px;">{{name[0]}}</p><p style="font-size: 10px;margin-top: -16px;margin-left: -10px;color: red;">แก้ไข</p></ion-col></ion-button>
+        <p style="color: black;padding-left: 20px;font-size: 20px;margin-top: 10px;">{{name}}</p>
+      </ion-row>
+    </div>
+    
+  </div>
+  <ion-item>
+    <p>
+      คำสั่งซื้อของฉัน
+    </p>
+  </ion-item>
+  <div>
+  <div style="justify-content: space-between;height: 150px;">
+    <ion-row style="justify-content: space-around;">
+      <ion-img (click)="basket()" src="../assets/Money_44325.png" style="width: 40px;padding-top: 5%;" ></ion-img>
+      <ion-img (click)="getsend()" src="../assets/truck.png" style="width: 40px;padding-top: 5%;" ></ion-img>
+      <ion-img (click)="get()" src="../assets/bag_106641.png" style="width: 40px;padding-top: 5%;" ></ion-img>
+    </ion-row>
+    <ion-row style="justify-content: space-around;font-size: 12px;">
+      <p>ที่ต้องชำระเงิน</p>
+      <p>จัดส่ง</p>
+      <p>ที่ต้องได้รับ</p>
+    </ion-row>
+  </div>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <div>
+    <ion-button (click)="logout()" style="background: linear-gradient(197deg, #C78E84,#E45A5B );color: black;" expand="full" fill="clear">log out</ion-button>
+  </div>
+</ion-footer>
